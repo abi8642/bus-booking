@@ -28,6 +28,10 @@ app.get("/", (req, res) => {
   res.redirect("/api/users");
 });
 
+app.get("/check-health", (req, res) => {
+  res.send("Server Health is OK");
+});
+
 app.use("/api/auth-owner", require("./routes/auth-owner"));
 app.use("/api/auth-user", require("./routes/auth-user"));
 app.use("/api/bookings", require("./routes/booking"));
